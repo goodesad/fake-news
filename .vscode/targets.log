@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Mon Aug 22 10:03:23 2022
+# Make data base, printed on Mon Aug 22 11:32:10 2022
 
 # Variables
 
@@ -26,7 +27,7 @@ HOMEBREW_NO_ANALYTICS = 1
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/adam/code/goodesad/fake-news
+CURDIR := /Users/charleschaverot/code/goodesad/fake-news
 # makefile
 SHELL = /bin/sh
 # environment
@@ -34,7 +35,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/bin/make
 # environment
-GOOGLE_APPLICATION_CREDENTIALS = /Users/adam/code/le-wagon-1-52fa41671949.json
+GOOGLE_APPLICATION_CREDENTIALS = /Users/charleschaverot/code/charlescvt/gcp/wagon-bootcamp-355314-afef908e42fa.json
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
@@ -42,25 +43,27 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # makefile (from `Makefile', line 47)
 PYPI_USERNAME = <AUTHOR>
 # environment
-VSCODE_CWD = /Users/adam/code/goodesad/fake-news
+VSCODE_CWD = /Users/charleschaverot/code/goodesad/fake-news
 # environment
-PATH = /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:./bin:./node_modules/.bin:/Users/adam/.pyenv/plugins/pyenv-virtualenv/shims:/Users/adam/.pyenv/shims:/Users/adam/.rbenv/bin:/Users/adam/.pyenv/plugins/pyenv-virtualenv/shims:/Users/adam/.pyenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
+PATH = /Users/charleschaverot/miniforge3/envs/env_tf/bin:/Users/charleschaverot/miniforge3/condabin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:bin:node_modules/.bin:/Users/charleschaverot/.pyenv/plugins/pyenv-virtualenv/shims:/Users/charleschaverot/.pyenv/shims:/Users/charleschaverot/.rbenv/bin:/Users/charleschaverot/.pyenv/plugins/pyenv-virtualenv/shims:/Users/charleschaverot/.pyenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/sbin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-VIRTUAL_ENV = /Users/adam/.pyenv/versions/3.8.12/envs/fake-news
+VIRTUAL_ENV = /Users/charleschaverot/.pyenv/versions/3.8.12/envs/taxifare-env
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-PYENV_ROOT = /Users/adam/.pyenv
+PYENV_ROOT = /Users/charleschaverot/.pyenv
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.TbPy9gcPbS/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.D588xXiLc4/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/adam/code/goodesad/fake-news
+CONDA_EXE = /Users/charleschaverot/miniforge3/bin/conda
+# environment
+PWD = /Users/charleschaverot/code/goodesad/fake-news
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -68,19 +71,21 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 PYENV_SHELL = zsh
 # environment
-HOME = /Users/adam
+HOME = /Users/charleschaverot
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/adam/Library/Application Support/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
+VSCODE_CODE_CACHE_PATH = /Users/charleschaverot/Library/Application Support/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
 # environment
-LOGNAME = adam
+LOGNAME = charleschaverot
 # environment
 BUNDLER_EDITOR = code
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+CONDA_PROMPT_MODIFIER = (env_tf) 
 # environment
 PYTHONBREAKPOINT = ipdb.set_trace
 # environment
@@ -98,15 +103,17 @@ SHLVL = 3
 # default
 MAKE_VERSION := 3.81
 # environment
-USER = adam
+USER = charleschaverot
 # makefile
 .DEFAULT_GOAL := install_requirements
 # environment
-TERM_SESSION_ID = BB8D9664-FFB3-44E6-8380-392A909CB189
+TERM_SESSION_ID = D5EF7A22-4BB5-456D-B353-6791D3045F65
 # environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
+# environment
+CONDA_SHLVL = 1
 # default
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
 # environment
@@ -114,15 +121,15 @@ TERM_PROGRAM = Apple_Terminal
 # default
 .VARIABLES := 
 # environment
-TMPDIR = /var/folders/ch/0_41mxts4d56__pnscp0tcn80000gn/T/
+TMPDIR = /var/folders/tm/byv90pv92qb55sdg6w90x3yc0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/adam/Library/Application Support/Code/1.70.1-main.sock
+VSCODE_IPC_HOOK = /Users/charleschaverot/Library/Application Support/Code/1.70.1-main.sock
 # environment
 MallocNanoZone = 0
 # environment
-PYTHONPATH = /Users/adam/code/goodesad/data-challenges/04-Decision-Science:
+PYTHONPATH = /Users/charleschaverot/code/charlescvt/data-challenges/04-Decision-Science:
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -130,11 +137,11 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 440
+TERM_PROGRAM_VERSION = 445
 # environment
-NVM_DIR = /Users/adam/.nvm
+NVM_DIR = /Users/charleschaverot/.nvm
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.66626012.66626018.58B20517-F5BB-47F0-978E-84B6C60E9240
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.46374624.46374630.27CC790D-FB4E-491F-9F94-C29D32AD87CC
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -156,11 +163,15 @@ LC_ALL = C
 # environment
 PYENV_VIRTUALENV_DISABLE_PROMPT = 1
 # environment
-PYENV_VIRTUAL_ENV = /Users/adam/.pyenv/versions/3.8.12/envs/fake-news
+CONDA_PYTHON_EXE = /Users/charleschaverot/miniforge3/bin/python
+# environment
+PYENV_VIRTUAL_ENV = /Users/charleschaverot/.pyenv/versions/3.8.12/envs/taxifare-env
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
+# environment
+_CE_M = 
 # environment
 PYENV_VIRTUALENV_INIT = 1
 # default
@@ -168,13 +179,17 @@ PYENV_VIRTUALENV_INIT = 1
 # environment
 MAKELEVEL := 0
 # environment
-LANG = C
+CONDA_PREFIX = /Users/charleschaverot/miniforge3/envs/env_tf
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 8772
+VSCODE_PID = 31108
+# environment
+_CE_CONDA = 
+# environment
+LANG = C
 # variable set hash-table stats:
-# Load=81/1024=8%, Rehash=0, Collisions=2/107=2%
+# Load=88/1024=9%, Rehash=0, Collisions=3/114=3%
 
 # Pattern-specific Variable Values
 
@@ -182,9 +197,9 @@ VSCODE_PID = 8772
 
 # Directories
 
-# . (device 16777220, inode 68977596): 18 files, no impossibilities.
+# . (device 16777234, inode 51685331): 17 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -234,7 +249,7 @@ pypi:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-22 08:25:09
+#  Last modified 2022-08-22 11:31:11
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -295,6 +310,7 @@ clean:
 #  Needs to be updated (-q is set).
 # automatic
 # @ := clean
+ 
 # automatic
 # % := 
 # automatic
@@ -320,7 +336,6 @@ clean:
 	@rm -fr fake-news.egg-info
 	
 
- 
 ftest:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -358,6 +373,6 @@ install:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Aug 22 10:03:23 2022
+# Finished Make data base on Mon Aug 22 11:32:10 2022
 
  
