@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Mon Aug 22 11:32:10 2022
+# Make data base, printed on Thu Aug 25 18:12:21 2022
 
 # Variables
 
@@ -30,6 +30,7 @@ HOMEBREW_NO_ANALYTICS = 1
 CURDIR := /Users/charleschaverot/code/goodesad/fake-news
 # makefile
 SHELL = /bin/sh
+ 
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
@@ -49,15 +50,13 @@ PATH = /Users/charleschaverot/miniforge3/envs/env_tf/bin:/Users/charleschaverot/
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-VIRTUAL_ENV = /Users/charleschaverot/.pyenv/versions/3.8.12/envs/taxifare-env
-# environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
 PYENV_ROOT = /Users/charleschaverot/.pyenv
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.D588xXiLc4/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Mj9QMb4Ha1/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -77,7 +76,7 @@ MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /De
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/charleschaverot/Library/Application Support/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
+VSCODE_CODE_CACHE_PATH = /Users/charleschaverot/Library/Application Support/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
 # environment
 LOGNAME = charleschaverot
 # environment
@@ -93,6 +92,8 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
+CONDA_DEFAULT_ENV = env_tf
+# environment
 XPC_FLAGS = 0x0
 # default
 MAKE = $(MAKE_COMMAND)
@@ -107,7 +108,7 @@ USER = charleschaverot
 # makefile
 .DEFAULT_GOAL := install_requirements
 # environment
-TERM_SESSION_ID = D5EF7A22-4BB5-456D-B353-6791D3045F65
+TERM_SESSION_ID = 3E8D0694-8E92-4C02-922D-80EFE55F23D6
 # environment
 LESS = -R
 # automatic
@@ -125,7 +126,7 @@ TMPDIR = /var/folders/tm/byv90pv92qb55sdg6w90x3yc0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/charleschaverot/Library/Application Support/Code/1.70.1-main.sock
+VSCODE_IPC_HOOK = /Users/charleschaverot/Library/Application Support/Code/1.70.2-main.sock
 # environment
 MallocNanoZone = 0
 # environment
@@ -141,7 +142,7 @@ TERM_PROGRAM_VERSION = 445
 # environment
 NVM_DIR = /Users/charleschaverot/.nvm
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.46374624.46374630.27CC790D-FB4E-491F-9F94-C29D32AD87CC
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.51845411.51845417.6BAF3517-AE17-487C-909B-FFA4E2FB4DCB
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -164,8 +165,6 @@ LC_ALL = C
 PYENV_VIRTUALENV_DISABLE_PROMPT = 1
 # environment
 CONDA_PYTHON_EXE = /Users/charleschaverot/miniforge3/bin/python
-# environment
-PYENV_VIRTUAL_ENV = /Users/charleschaverot/.pyenv/versions/3.8.12/envs/taxifare-env
 # automatic
 ^F = $(notdir $^)
 # default
@@ -183,13 +182,13 @@ CONDA_PREFIX = /Users/charleschaverot/miniforge3/envs/env_tf
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 31108
+VSCODE_PID = 23240
 # environment
 _CE_CONDA = 
 # environment
 LANG = C
 # variable set hash-table stats:
-# Load=88/1024=9%, Rehash=0, Collisions=3/114=3%
+# Load=87/1024=8%, Rehash=0, Collisions=3/113=3%
 
 # Pattern-specific Variable Values
 
@@ -197,9 +196,9 @@ LANG = C
 
 # Directories
 
-# . (device 16777234, inode 51685331): 17 files, no impossibilities.
+# . (device 16777232, inode 51685331): 20 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 20 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -310,7 +309,6 @@ clean:
 #  Needs to be updated (-q is set).
 # automatic
 # @ := clean
- 
 # automatic
 # % := 
 # automatic
@@ -340,6 +338,7 @@ ftest:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 #  commands to execute (from `Makefile', line 18):
 	@Write me
 	
@@ -373,6 +372,6 @@ install:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Aug 22 11:32:10 2022
+# Finished Make data base on Thu Aug 25 18:12:21 2022
 
  
