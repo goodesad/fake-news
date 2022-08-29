@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug 29 09:33:53 2022
+# Make data base, printed on Mon Aug 29 18:06:41 2022
 
 # Variables
 
@@ -59,7 +59,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 PYENV_ROOT = /home/lukas/.pyenv
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-efe0fc44-8d60-45a7-a8a1-e80af9ba26b8.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-c731d79a-a908-4739-a725-e3c95c2aaaae.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -77,7 +77,7 @@ PWD = /home/lukas/code/maurylukas/fake-news
 # environment
 SSH_AGENT_PID = 216
 # environment
-WSL_INTEROP = /run/WSL/8_interop
+WSL_INTEROP = /run/WSL/17760_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
@@ -91,7 +91,7 @@ LOGNAME = lukas
 # environment
 BUNDLER_EDITOR = code
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 PYTHONBREAKPOINT = ipdb.set_trace
 # environment
@@ -351,6 +351,6 @@ install:
 # strcache performance: lookups = 58 / hit rate = 39%
 # hash-table stats:
 # Load=35/8192=0%, Rehash=0, Collisions=1/58=2%
-# Finished Make data base on Mon Aug 29 09:33:53 2022
+# Finished Make data base on Mon Aug 29 18:06:41 2022
 
  
