@@ -53,3 +53,16 @@ pypi_test:
 
 pypi:
 	@twine upload dist/* -u $(PYPI_USERNAME)
+
+# ----------------------------------
+#      API
+# ----------------------------------
+
+run_api:
+	uvicorn fake-news.api.fast:app --reload
+
+test_api_root:
+	TEST_ENV=development PYTHONDONTWRITEBYTECODE=1 pytest tests/api -k 'test_root' -v --color=yes --asyncio-mode=strict -W "ignore"
+
+test_api_predict:
+	TEST_ENV=development PYTHONDONTWRITEBYTECODE=1 pytest tests/api -k 'test_predict' -v --color=yes --asyncio-mode=strict -W "ignore"
