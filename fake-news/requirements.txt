@@ -1,0 +1,15 @@
+colorama
+ipdb
+ipykernel
+matplotlib
+numpy
+pandas
+nbresult
+pygeohash
+pytest
+seaborn
+sklearn
+yapf
+tensorflow-macos
+protobuf==3.20.1
+nltk
