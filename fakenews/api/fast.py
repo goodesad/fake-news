@@ -19,20 +19,9 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-# $WIPE_BEGIN
-# 💡 Preload the model to accelerate the predictions
-# We want to avoid loading the heavy deep-learning model from MLflow at each `get("/predict")`
-# The trick is to load the model in memory when the uvicorn server starts
-# Then to store the model in an `app.state.model` global variable accessible across all routes!
-# This will prove very useful for demo days
-# app.state.model = load_model()
-# $WIPE_END
-
-
 @app.get("/predict")
-def predict(txt: str): # how do I establish a connection to this variable inputed in the website project?
-    print(os.getcwd())
-    #X_pred = {txt:[txt]}
+def predict(txt: str):
+
     model = joblib.load('fakenews/api/model_cnn_lucas.joblib')
     X = pd.Series(txt)
 

@@ -1,4 +1,5 @@
-make: Entering directory `/Users/adam/code/goodesad/fake-news'
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/lukas/code/maurylukas/fake-news'
 pip install -r requirements.txt
-make: Leaving directory `/Users/adam/code/goodesad/fake-news'
+make: Leaving directory '/home/lukas/code/maurylukas/fake-news'
  
