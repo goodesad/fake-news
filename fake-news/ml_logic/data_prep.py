@@ -36,13 +36,14 @@ def prepare_pred_news_notnews(text):
     pred_pad = pad_sequences(pred_token,
                              padding='post',
                              maxlen=300,
-                             dtype='float32')
+                             dtype='int32')
 
-    return [pred_pad]
+    return pred_pad
 
 
 
 def prepare_data_real_fakenews(X,y):
+
     X_train_raw, X_test_raw, y_train, y_test = train_test_split(X, y, test_size=0.25)
     tokenizer = Tokenizer()
     tokenizer.fit_on_texts(X_train_raw)
@@ -68,6 +69,6 @@ def prepare_pred_real_fakenews(text):
     pred_pad = pad_sequences(pred_token,
                              padding='post',
                              maxlen=300,
-                             dtype='float32')
+                             dtype='int32')
 
-    return [pred_pad]
+    return pred_pad

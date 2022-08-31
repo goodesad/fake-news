@@ -12,28 +12,6 @@ rec = Recall()
 
 ##############################################
 
-# rf = real / fake news model
-def initialize_model_rf():
-    with open('saved/pickles/real_fakenews_tokenizer.pickle', 'rb') as handle:
-        tokenizer = pickle.load(handle)
-
-    model = Sequential()
-    model.add(Embedding(
-        input_dim=(len(tokenizer.word_index))+1, # +1 for the 0 padding
-        input_length=300, # Max_sentence_length (optional, for model summary)
-        output_dim=100,
-        mask_zero=True, # Built-in masking layer
-    ))
-    model.add(Conv1D(12, kernel_size=5, activation='tanh'))
-    model.add(Flatten())
-    model.add(Dense(1, activation='relu'))
-
-    model.add(Dense(1, activation='sigmoid'))
-
-    return model
-
-#############
-
 # nnn = news / not news model
 def initialize_model_nnn():
     with open('saved/pickles/news_notnews_tokenizer.pickle', 'rb') as handle:
@@ -48,11 +26,34 @@ def initialize_model_nnn():
     ))
     model.add(Conv1D(12, kernel_size=5, activation='tanh'))
     model.add(Flatten())
-    model.add(Dense(1, activation='relu'))
+    model.add(Dense(6, activation='relu'))
 
     model.add(Dense(1, activation='sigmoid'))
 
     return model
+
+#############
+
+# rf = real / fake news model
+def initialize_model_rf():
+    with open('saved/pickles/real_fakenews_tokenizer.pickle', 'rb') as handle:
+        tokenizer = pickle.load(handle)
+
+    model = Sequential()
+    model.add(Embedding(
+        input_dim=(len(tokenizer.word_index))+1, # +1 for the 0 padding
+        input_length=300, # Max_sentence_length (optional, for model summary)
+        output_dim=100,
+        mask_zero=True, # Built-in masking layer
+    ))
+    model.add(Conv1D(12, kernel_size=5, activation='tanh'))
+    model.add(Flatten())
+    model.add(Dense(6, activation='relu'))
+
+    model.add(Dense(1, activation='sigmoid'))
+
+    return model
+
 
 ##################################################
 
@@ -67,36 +68,33 @@ def compile_model(model):
 ##################################################
 
 def train_model_nnn(model, X_train, y_train):
-    es = EarlyStopping(monitor='val_binary_accuracy',patience=4,
+    es = EarlyStopping(monitor='val_loss',patience=4,
                        restore_best_weights=True)
 
-##### CHANGE BATCH_SIZE BACK TO 32 AND EPOCH TO 3
     model_final = model.fit(X_train, y_train,
-                            epochs = 1,
+                            epochs = 3,
                             callbacks=[es],
-                            batch_size=2048,
+                            batch_size=1024,
                             verbose=1,
-                            use_multiprocessing=True)
+                            use_multiprocessing=True,
+                            validation_split=0.25)
 
     model.save('saved/models/model_news_notnews.tf')
 
 #########
 
-
 def train_model_rf(model, X_train, y_train):
-    es = EarlyStopping(monitor='val_binary_accuracy',patience=4,
+    es = EarlyStopping(monitor='val_loss',patience=4,
                        restore_best_weights=True)
 
     model_final = model.fit(X_train, y_train,
-                            epochs = 1,
+                            epochs = 3,
                             callbacks=[es],
-                            batch_size=2048,
+                            batch_size=1024,
                             verbose=1,
-                            use_multiprocessing=True)
+                            use_multiprocessing=True,
+                            validation_split=0.25)
 
     model.save('saved/models/model_real_fakenews.tf')
-
-    return model_final
-
 
     return model_final

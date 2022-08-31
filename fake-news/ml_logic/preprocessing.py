@@ -4,7 +4,6 @@ import string
 from nltk.stem import WordNetLemmatizer as wn
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-from sklearn.preprocessing import LabelEncoder as le
 
 
 def preprocess_csv_news_notnews():
@@ -42,18 +41,14 @@ def preprocess_csv_news_notnews():
 
         sentence = ''.join(char for char in sentence if not char.isdigit())
 
-        for punctuation in string.punctuation:
+        for punctuation in (string.punctuation + '’' + '“' + '‘' + '”'):
             sentence = sentence.replace(punctuation, ' ')
 
         sentence = sentence.strip()
 
         sentence = word_tokenize (sentence)
-        final = []
-        for word in sentence:
-            if word in stop_words:
-                sentence.remove(word)
-            if len(word) >= 3:
-                final.append(word)
+
+        final = [word for word in sentence if word not in stop_words and len(word)>=3]
 
         lemmatize(final)
 
@@ -68,7 +63,12 @@ def preprocess_csv_news_notnews():
 
     # making complete non news dataframe
     samples = 13575
-    notnewsdf = pd.DataFrame(pd.concat([book_proc.sample(samples), food_proc.sample(samples), recipes_proc.sample(samples), lyrics_proc], ignore_index=True), columns=['text'])
+    notnewsdf = pd.DataFrame(pd.concat([book_proc.sample(samples),
+                                        food_proc.sample(samples),
+                                        recipes_proc.sample(samples),
+                                        lyrics_proc],
+                                       ignore_index=True), columns=['text'])
+
     notnewsdf = notnewsdf.sample(n=len(notnewsdf), ignore_index=True)
 
     notnewsdf['target'] = 0
@@ -87,6 +87,10 @@ def preprocess_csv_news_notnews():
     return fulldf
 
 
+##############################################################################
+
+
+# not being used because data already cleaned but keeping for possible later use
 def preprocess_csv_real_fakenews(X: pd.DataFrame):
 
     def lemmatize (words):
@@ -106,7 +110,7 @@ def preprocess_csv_real_fakenews(X: pd.DataFrame):
 
     stop_words = stopwords.words('english')
 
-##################################################################
+
     def preprocessing(sentence):
         sentence = sentence.strip()
 
@@ -114,28 +118,20 @@ def preprocess_csv_real_fakenews(X: pd.DataFrame):
 
         sentence = ''.join(char for char in sentence if not char.isdigit())
 
-        for punctuation in string.punctuation:
+        for punctuation in (string.punctuation + '’' + '“' + '‘' + '”'):
             sentence = sentence.replace(punctuation, ' ')
 
         sentence = sentence.strip()
 
         sentence = word_tokenize (sentence)
 
-        final = []
-        for word in sentence:
-            if word not in stop_words and len(word) >= 3:
-                final.append(word)
+        final = [word for word in sentence if word not in stop_words and len(word)>=3]
 
 
         lemmatize(final)
 
         return ' '.join(final)
 
-    X = X.str.replace ("’", "'", regex = False)
-    X = X.str.replace ("‘", "'", regex = False)
-    X = X.str.replace ('“', '"', regex = False)
-    X = X.str.replace ('”', '"', regex = False)
-
-    X_proc = X.apply(preprocessing)
+    X_proc = preprocessing(X)
 
     return X_proc
