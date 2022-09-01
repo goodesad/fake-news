@@ -68,13 +68,13 @@ def compile_model(model):
 ##################################################
 
 def train_model_nnn(model, X_train, y_train):
-    es = EarlyStopping(monitor='val_loss',patience=4,
+    es = EarlyStopping(monitor='val_loss',patience=2,
                        restore_best_weights=True)
 
     model_final = model.fit(X_train, y_train,
-                            epochs = 3,
+                            epochs = 5,
                             callbacks=[es],
-                            batch_size=1024,
+                            batch_size=32,
                             verbose=1,
                             use_multiprocessing=True,
                             validation_split=0.25)
@@ -84,13 +84,13 @@ def train_model_nnn(model, X_train, y_train):
 #########
 
 def train_model_rf(model, X_train, y_train):
-    es = EarlyStopping(monitor='val_loss',patience=4,
+    es = EarlyStopping(monitor='val_loss',patience=2,
                        restore_best_weights=True)
 
     model_final = model.fit(X_train, y_train,
-                            epochs = 3,
+                            epochs = 5,
                             callbacks=[es],
-                            batch_size=1024,
+                            batch_size=32,
                             verbose=1,
                             use_multiprocessing=True,
                             validation_split=0.25)

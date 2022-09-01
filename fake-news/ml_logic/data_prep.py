@@ -5,7 +5,10 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from sklearn.model_selection import train_test_split
 import pickle
 
+from ml_logic.preprocessing import preprocessing
 
+
+# tokenize/pad train data
 def prepare_data_news_notnews(X,y):
 
     X_train_raw, X_test_raw, y_train, y_test = train_test_split(X, y, test_size=0.25)
@@ -25,7 +28,11 @@ def prepare_data_news_notnews(X,y):
 
     return X_train, X_test, y_train, y_test
 
+# tokenize/pad user input
 def prepare_pred_news_notnews(text):
+
+
+    text = preprocessing(text)
 
     # load tokenizer pickle
 
@@ -41,7 +48,7 @@ def prepare_pred_news_notnews(text):
     return pred_pad
 
 
-
+# tokenize/pad train data
 def prepare_data_real_fakenews(X,y):
 
     X_train_raw, X_test_raw, y_train, y_test = train_test_split(X, y, test_size=0.25)
@@ -58,7 +65,10 @@ def prepare_data_real_fakenews(X,y):
 
     return X_train, X_test, y_train, y_test
 
+# tokenize/pad user input
 def prepare_pred_real_fakenews(text):
+
+    text = preprocessing(text)
 
     # load tokenizer pickle
 

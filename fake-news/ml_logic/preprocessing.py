@@ -5,22 +5,10 @@ from nltk.stem import WordNetLemmatizer as wn
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
+stop_words = stopwords.words('english')
 
-def preprocess_csv_news_notnews():
 
-    stop_words = stopwords.words('english')
-
-    # not news
-    lyricsdf = pd.read_csv('../raw_data/song_lyrics.csv')
-    recipesdf = pd.read_csv('../raw_data/recipes.csv')
-    fooddf = pd.read_csv('../raw_data/food_reviews.csv')
-    bookdf = pd.read_csv('../raw_data/book_descriptions.csv')
-
-    # news
-    cleanfake = pd.read_csv('data/clean_data_Fake.csv')
-    cleantrue = pd.read_csv('data/clean_data_True.csv')
-
-    def lemmatize (words):
+def lemmatize (words):
         for index, word in enumerate (words):
             words[index] = wn().lemmatize(word, pos='v')
         for index, word in enumerate (words):
@@ -34,7 +22,8 @@ def preprocess_csv_news_notnews():
 
         return ' '.join(words)
 
-    def preprocessing(sentence):
+
+def preprocessing(sentence):
         sentence = sentence.strip()
 
         sentence = sentence.lower()
@@ -53,6 +42,20 @@ def preprocess_csv_news_notnews():
         lemmatize(final)
 
         return ' '.join(final)
+
+
+def preprocess_csv_news_notnews():
+
+
+    # not news
+    lyricsdf = pd.read_csv('../raw_data/song_lyrics.csv')
+    recipesdf = pd.read_csv('../raw_data/recipes.csv')
+    fooddf = pd.read_csv('../raw_data/food_reviews.csv')
+    bookdf = pd.read_csv('../raw_data/book_descriptions.csv')
+
+    # news
+    cleanfake = pd.read_csv('data/clean_data_Fake.csv')
+    cleantrue = pd.read_csv('data/clean_data_True.csv')
 
 
     # preprocessing nonnews dataframes
@@ -93,44 +96,9 @@ def preprocess_csv_news_notnews():
 # not being used because data already cleaned but keeping for possible later use
 def preprocess_csv_real_fakenews(X: pd.DataFrame):
 
-    def lemmatize (words):
-        for index, word in enumerate (words):
-            words[index] = wn().lemmatize(word, pos='v')
-        for index, word in enumerate (words):
-            words[index] = wn().lemmatize(word, pos='r')
-        for index, word in enumerate (words):
-            words[index] = wn().lemmatize(word, pos='a')
-        for index, word in enumerate (words):
-            words[index] = wn().lemmatize(word, pos='n')
-        for index, word in enumerate (words):
-            words[index] = wn().lemmatize(word, pos='s')
-        return ' '.join(words)
-
     X = lemmatize(X)
 
     stop_words = stopwords.words('english')
-
-
-    def preprocessing(sentence):
-        sentence = sentence.strip()
-
-        sentence = sentence.lower()
-
-        sentence = ''.join(char for char in sentence if not char.isdigit())
-
-        for punctuation in (string.punctuation + '’' + '“' + '‘' + '”'):
-            sentence = sentence.replace(punctuation, ' ')
-
-        sentence = sentence.strip()
-
-        sentence = word_tokenize (sentence)
-
-        final = [word for word in sentence if word not in stop_words and len(word)>=3]
-
-
-        lemmatize(final)
-
-        return ' '.join(final)
 
     X_proc = preprocessing(X)
 
